@@ -7,7 +7,7 @@
 // @grant       none
 // @version     2.0
 // @author      Tecnika
-// @downloadURL https://github.com/Tecnika/MyUserScripts/edit/main/CoddySchool/CoddyAutoHomeWork.user.js
+// @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/CoddySchool/CoddyAutoHomeWork.user.js
 // ==/UserScript==
 window.addEventListener('load', function () {
     if (ProfileStatus() > 0) {
