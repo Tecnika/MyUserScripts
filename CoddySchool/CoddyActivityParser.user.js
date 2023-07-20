@@ -7,6 +7,7 @@
 // @grant       none
 // @version     3.1
 // @author      Tecnika
+// @downloadURL https://github.com/Tecnika/MyUserScripts/blob/main/CoddySchool/CoddyActivityParser.user.js
 // ==/UserScript==
 
 //Перед запуском скрипта нужно поменять user и второго include на ссылку на свой профиль, сохранив форматирование
