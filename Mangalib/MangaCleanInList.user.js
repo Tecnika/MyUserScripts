@@ -5,7 +5,7 @@
 // @grant       none
 // @version     1.0
 // @author      Tecnika
-// @downloadURL https://github.com/Tecnika/MyUserScripts/edit/raw/Mangalib/MangaCleanInList.user.js
+// @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/Mangalib/MangaCleanInList.user.js
 // ==/UserScript==
 var needclass = ".bookmark-actions";
 window.addEventListener('load', function () {
