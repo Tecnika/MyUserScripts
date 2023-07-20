@@ -5,7 +5,7 @@
 // @grant       none
 // @version     4.2
 // @author      Tecnika
-// @downloadURL https://github.com/Tecnika/MyUserScripts/edit/main/CoddySchool/CoddyAutoGrate.user.js
+// @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/CoddySchool/CoddyAutoGrate.user.js
 // ==/UserScript==
 window.addEventListener('load', function () {
     if (ProfileStatus() === 'Ученик') {
