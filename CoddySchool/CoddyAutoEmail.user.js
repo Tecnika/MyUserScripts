@@ -7,7 +7,7 @@
 // @grant       none
 // @version     1.0
 // @author      Tecnika
-// @downloadURL https://github.com/Tecnika/MyUserScripts/edit/main/CoddySchool/CoddyAutoEmail.user.js
+// @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/CoddySchool/CoddyAutoEmail.user.js
 // ==/UserScript==
 window.addEventListener('load', function () {
     if (ProfileStatus() === 'Ученик') {
