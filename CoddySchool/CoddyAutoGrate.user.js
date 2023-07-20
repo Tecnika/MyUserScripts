@@ -3,8 +3,9 @@
 // @description	Скрипт для автоматической простановки оценок И ВРЕМЕНИ по кнопке.
 // @include     https://coddy.t8s.ru/Profile/*
 // @grant       none
-// @version     4.1
+// @version     4.2
 // @author      Tecnika
+// @downloadURL https://github.com/Tecnika/MyUserScripts/edit/main/CoddySchool/CoddyAutoGrate.user.js
 // ==/UserScript==
 window.addEventListener('load', function () {
     if (ProfileStatus() === 'Ученик') {
