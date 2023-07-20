@@ -5,6 +5,7 @@
 // @grant       none
 // @version     1.0
 // @author      Tecnika
+// @downloadURL https://github.com/Tecnika/MyUserScripts/edit/main/Mangalib/MangaClean.user.js
 // ==/UserScript==
 var needclass = ".header-dropdown";
 window.addEventListener('load', function () {
