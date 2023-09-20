@@ -4,7 +4,7 @@
 // @match       https://web2-new.online.sberbank.ru/*
 // @description	Скрипт для парсинга зп в Сбере
 // @author Tecnika
-// @version     1.1
+// @version     1.4
 // @grant none
 // @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/Life/SberZpParser.user.js
 // ==/UserScript==
@@ -106,7 +106,7 @@ function SberZP(Who) {
 }
 window.addEventListener('load', function () {
     let node = document.querySelector('#operations-wrapper')
-    node.insertAdjacentHTML('beforeBegin', '<p font-weight="medium">Парсинг:</p> <button font-weight="medium" onclick="SberZP(1)">ЗП</button><button font-weight="medium" onclick="SberZP(0)">Coddy</button>')
+    node.insertAdjacentHTML('beforeBegin', '<div style="display: flex; margin: 5px" ><p font-weight="medium">Парсинг:</p><button style="margin: 5px;background-color: lightgreen;border-radius: 10px;"  font-weight="medium" onclick="SberZP(1)">ЗП</button><button style="margin: 5px;background-color: lightblue;border-radius: 10px;" font-weight="medium" onclick="SberZP(0)">Coddy</button></div>')
 }, false);
 
 // SberZP(1)
