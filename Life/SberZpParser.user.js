@@ -106,5 +106,7 @@ function SberZP(Who) {
 }
 window.addEventListener('load', function () {
     let node = document.querySelector('#operations-wrapper')
-    node.insertAdjacentHTML('beforeBegin', 'Парсинг: <button onclick="SberZP(1)">ЗП</button><button onclick="SberZP(0)">Coddy</button>')
+    node.insertAdjacentHTML('beforeBegin', '<p font-weight="medium">Парсинг:</p> <button font-weight="medium" onclick="SberZP(1)">ЗП</button><button font-weight="medium" onclick="SberZP(0)">Coddy</button>')
 }, false);
+
+// SberZP(1)
