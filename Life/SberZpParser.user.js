@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name SberParsing
 // @namespace OrangeMonkey Scripts
-// @match       https://web2-new.online.sberbank.ru/*
+// @match       https://web2-new.online.sberbank.ru/operations?usedResource=*
 // @description	Скрипт для парсинга зп в Сбере
 // @author Tecnika
 // @version     1.4
