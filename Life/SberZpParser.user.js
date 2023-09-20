@@ -4,7 +4,7 @@
 // @match       https://web2-new.online.sberbank.ru/*
 // @description	Скрипт для парсинга зп в Сбере
 // @author Tecnika
-// @version     1.0
+// @version     1.1
 // @grant none
 // @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/Life/SberZpParser.user.js
 // ==/UserScript==
