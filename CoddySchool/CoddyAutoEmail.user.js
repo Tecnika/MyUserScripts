@@ -5,7 +5,7 @@
 // @include     https://coddy.t8s.ru/Profile/5743
 // @include     https://coddy.t8s.ru/Profile/31513
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Tecnika
 // @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/CoddySchool/CoddyAutoEmail.user.js
 // ==/UserScript==
