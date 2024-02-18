@@ -108,7 +108,7 @@ const addName = () => {
     return name.split('\n')[0]
 }
 const addDate = () => {
-    let past = document.querySelectorAll('.PastPaid');
+    let past = document.querySelectorAll('[class^="Past"]');
     let last_day = past[past.length - 1];
     let year = new Date().getFullYear();
     let date = last_day.innerText + '.' + year;
