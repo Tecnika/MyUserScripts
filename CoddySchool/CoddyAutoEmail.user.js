@@ -5,8 +5,9 @@
 // @include     https://coddy.t8s.ru/Profile/5743
 // @include     https://coddy.t8s.ru/Profile/31513
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Tecnika
+//
 // @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/CoddySchool/CoddyAutoEmail.user.js
 // ==/UserScript==
 window.addEventListener('load', function () {
@@ -61,9 +62,9 @@ const addButton = () => {
     let div = document.querySelector('.modal.HHFade.show');
     div.querySelector('.modal-footer').insertAdjacentHTML(
         'afterbegin',
-        `   
+        `
           <div id='btnDrop' class="col-auto px-0">
-          <a href="`+ dropmefiles + `"class="btn btn-success" target="_blank">DropMeFiles</a> 
+          <a href="`+ dropmefiles + `"class="btn btn-success" target="_blank">DropMeFiles</a>
           </div>
           <div class="col-auto px-0">
               <button type='button' id='btnEmail' class="btn btn-info" onclick="
@@ -108,7 +109,7 @@ const addName = () => {
     return name.split('\n')[0]
 }
 const addDate = () => {
-    let past = document.querySelectorAll('.PastPaid');
+    let past = document.querySelectorAll('[class^="Past"]');
     let last_day = past[past.length - 1];
     let year = new Date().getFullYear();
     let date = last_day.innerText + '.' + year;
