@@ -3,7 +3,7 @@
 // @description	Скрипт для автоматической простановки оценок И ВРЕМЕНИ по кнопке.
 // @include     https://coddy.t8s.ru/Profile/*
 // @grant       none
-// @version     4.2
+// @version     4.6
 // @author      Tecnika
 // @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/CoddySchool/CoddyAutoGrate.user.js
 // ==/UserScript==
@@ -31,16 +31,17 @@ const SearchModal = () => {
     // Выбираем целевой элемент
     let i = setInterval(function () {
         if (document.querySelector('.modal.HHFade.show')) {
-          if (document.querySelector('#MailingSmsingBackUrl')){
-            clearInterval(i);
-          }else{
-            // если нашли останавливаем таймер и вызываем алерт
-            console.log('i have modal');
-            clearInterval(i);
-            // AutoGrade();
-            if (!document.querySelector('#btnGrade')) { addButton(); }
-            //    document.getElementById('btnParser').onclick = AutoGrate;
-        }}
+            if (document.querySelector('#MailingSmsingBackUrl')) {
+                clearInterval(i);
+            } else {
+                // если нашли останавливаем таймер и вызываем алерт
+                console.log('i have modal');
+                clearInterval(i);
+                // AutoGrade();
+                if (!document.querySelector('#btnGrade')) { addButton(); }
+                //    document.getElementById('btnParser').onclick = AutoGrate;
+            }
+        }
     }, 1000);
 }
 
@@ -55,66 +56,82 @@ const addButton = () => {
         `
         <div class="col-auto px-0">
             <button type='button' id='btnGrade' class="btn btn-outline-danger" onclick="
-                console.log('im here')
-                let star = document.querySelectorAll('.StarLink');
-                if (!!star){
-					star.forEach(element => {
-    					element.classList.add('Mark');
-					});
-                }   
-                
-                let score = [];
-                for (let i = 0; i < 3; i++) {
-                  	score.push(document.querySelector('#Score' + i));
-                }
-                score.forEach(input => {
-                   	input.value = 5;
-                 	input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
-                 	input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
-                	input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
-                	input.dispatchEvent(new Event('input', { bubbles: true }));
+                    console.log('im here')
+                    let star = document.querySelectorAll('.StarLink');
+                    if (!!star) {
+                        star.forEach(element => {
+                            element.classList.add('Mark');
+                        });
+                    }
+
+                    let score = [];
+                    for (let i = 0; i < 3; i++) {
+                        score.push(document.querySelector('#Score' + i));
+                    }
+                    score.forEach(input => {
+                        input.value = 5;
+                        input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
+                        input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
+                        input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    });
+
+                    let teacher = document.querySelector('.d-none.d-lg-inline').innerText
+                    let time = document.querySelector('#tabActual')
+                    let allCard = time.querySelectorAll('.card')
+                    let nameG = ''
+                    let hours, minuts
+                    allCard.forEach(a => {
+                        let nameGroup = a.querySelector('a').innerText
+                        time = a.querySelector('.TrNoTopBorders')
+                        let arr = time.querySelectorAll('td')[0].innerText.split(' ')
+                        arr = arr.filter((element) => element.length >= 2)
+                        if ((arr[0] + ' ' + arr[1]) == teacher) {
+
+                            time = time.querySelectorAll('td')[2].innerHTML.split('с')[1]
+                            if (nameG == '') {
+                                nameG = nameGroup
+                            }
+                            let shift = 1;
+                            hours = time[1] + time[2];
+                            if (time[2] === ':') {
+                                shift = 0
+                                hours = '0' + time[1]
+                            }
+                            minuts = time[3 + shift] + time[4 + shift];
+                            console.log(hours, ':', minuts)
+                        }
+                    });
+
+                    let input = document.querySelector('#DisciplineId')
+                    if (!!input) {
+                        if (nameG.includes('ANIME')) {
+                            input.value = '63';
+                        } else if (nameG.includes('GT')) {
+                            input.value = '109';
+                        } else if (nameG.includes('Академ')) {
+                            input.value = '135';
+                        } else if (nameG.includes('SKETCH')) {
+                            input.value = '122';
+                        } else if (nameG.includes('MANGA')) {
+                            input.value = '102';
+                        }
+                        input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
+                        input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
+                        input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+
+                    input = document.querySelector('.is-timeEntry')
+                    input.value = hours + ':' + minuts;
+                    input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
+                    input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
+                    input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
                     input.dispatchEvent(new Event('change', { bubbles: true }));
-                });
-        
-                let input = document.querySelector('#DisciplineId')
-                if (!!input){
-                	input.value = '63';
-                	input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
-                	input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
-                	input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
-                	input.dispatchEvent(new Event('input', { bubbles: true }));
-                	input.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-                
-                let teacher = document.querySelector('.d-none.d-lg-inline').innerText
-				let time = document.querySelector('#tabActual')
-				let allCard = time.querySelectorAll('.card')
-                let hours, minuts
-				allCard.forEach(a => {
-				    time = a.querySelector('.TrNoTopBorders')
-                    let arr=time.querySelectorAll('td')[0].innerText.split(' ')
-                    arr= arr.filter((element) => element.length >= 2)
-				    if ((arr[0]+ ' ' + arr[1]) == teacher) {
-				        time = time.querySelectorAll('td')[2].innerHTML.split('с')[1]
-				        let shift = 1;
-				        hours = time[1] + time[2];
-				        if (time[2] === ':') {
-			    	        shift = 0
-				            hours = '0' + time[1]
-				        }
-				        minuts = time[3 + shift] + time[4 + shift];
-				        console.log(hours, ':', minuts)
-				    }
-				});
-                
-                input = document.querySelector('.is-timeEntry')
-                input.value = hours + ':' + minuts;
-                input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
-                input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
-                input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
-                input.dispatchEvent(new Event('input', { bubbles: true }));
-                input.dispatchEvent(new Event('change', { bubbles: true }));
-                
+                                 
             ">Сделать красиво</button>
         </div>
         `,
