@@ -2,8 +2,9 @@
 // @name        MangaClean2
 // @description	Скрипт для автоматического поиска дублей в колокольчике
 // @include     https://test-front.mangalib.me/*
+// @include     https://mangalib.me/*
 // @grant       none
-// @version     1.0
+// @version     2.0
 // @author      Tecnika
 // @downloadURL -https://github.com/Tecnika/MyUserScripts/raw/main/Mangalib/MangaClean2.user.js
 // ==/UserScript==
