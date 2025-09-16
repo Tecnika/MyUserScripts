@@ -4,7 +4,7 @@
 // @include     https://test-front.mangalib.me/*
 // @include     https://mangalib.me/*
 // @grant       none
-// @version     2.1
+// @version     2.2
 // @author      Tecnika
 // @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/Mangalib/MangaClean2.user.js
 // ==/UserScript==
@@ -58,7 +58,7 @@ function scrollToEnd() {
 
 scrollToEnd();
        setTimeout(() => {
-            let items = document.querySelectorAll("[data-type=chapter]")
+            let items = document.querySelectorAll("[data-type^=chapter]")
             console.log("Оповещений о новых главах: ", items.length)
             let items_name = []
             items.forEach(item => {
