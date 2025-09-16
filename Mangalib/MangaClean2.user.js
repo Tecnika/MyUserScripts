@@ -6,7 +6,7 @@
 // @grant       none
 // @version     2.2
 // @author      Tecnika
-// @downloadURL https://github.com/Tecnika/MyUserScripts/raw/main/Mangalib/MangaClean2.user.js
+// @downloadURL https://github.com/Tecnika/MyUserScripts/raw/refs/heads/main/Mangalib/MangaClean2.user.js
 // ==/UserScript==
 var needclass = ".dropdown-menu";
 window.addEventListener('load', function () {
